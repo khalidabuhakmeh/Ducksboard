@@ -8,14 +8,19 @@ The objects contained here can be used for both Push and Pull APIs. You can sign
 
 ## Gettings Started
 
-```csharp
-  PM > Install-Package Ducksboard
-```
+Through Nuget (http://nuget.org):
 
 ```csharp
-    var dashboard = new DucksboardClient("** Your API Key Here **");
-    dashboard.Update("**widget number**, new Numbers { Value = 3.5 });
+PM > Install-Package Ducksboard
 ```
+Somewhere in your code (Push API):
+
+```csharp
+var dashboard = new DucksboardClient("** Your API Key Here **");
+var response = dashboard.Update("**widget number**", new Numbers { Value = 3.5 });
+```
+
+Note: the response object will let you know if it was successful in updating. It is not worth looking at unless you are running into issues. I exposed it so you can debug issues more easily.
 
 ### Supported Objects
 
