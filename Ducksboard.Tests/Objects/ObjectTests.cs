@@ -9,8 +9,8 @@ namespace Ducksboard.Tests.Objects
         [Fact]
         public void Can_serialize_value_properly()
         {
-            var target = new Numbers { Value = 3.5m };
-            var result = Serializer.Serialize(target);
+            var target = new Numbers {Value = 3.5m};
+            string result = Serializer.Serialize(target);
             result.Should().NotBeNullOrEmpty();
         }
 
@@ -23,8 +23,8 @@ namespace Ducksboard.Tests.Objects
         [Fact]
         public void Can_serialize_delta_properly()
         {
-            var target = new Numbers { Delta = 3.5m };
-            var result = Serializer.Serialize(target);
+            var target = new Numbers {Delta = 3.5m};
+            string result = Serializer.Serialize(target);
             result.Should().NotBeNullOrEmpty();
         }
     }
@@ -34,8 +34,8 @@ namespace Ducksboard.Tests.Objects
         [Fact]
         public void Can_serialize_a_gague_properly()
         {
-            var target = new Gauges { Value = 0.25m };
-            var result = Serializer.Serialize(target);
+            var target = new Gauges {Value = 0.25m};
+            string result = Serializer.Serialize(target);
             result.Should().NotBeNullOrEmpty();
         }
     }
@@ -51,7 +51,7 @@ namespace Ducksboard.Tests.Objects
             target.Value.Content = "All system stop!";
             target.Value.Link = "http://monitoring.example.org/incident/354";
 
-            var result = Serializer.Serialize(target);
+            string result = Serializer.Serialize(target);
             result.Should().NotBeNullOrEmpty();
         }
     }
@@ -65,7 +65,7 @@ namespace Ducksboard.Tests.Objects
             target.Value.Source = "http://assets.example.org/logo.png";
             target.Value.Caption = "Example Corp, Inc.";
 
-            var result = Serializer.Serialize(target);
+            string result = Serializer.Serialize(target);
             result.Should().NotBeNullOrEmpty();
         }
     }
@@ -78,7 +78,7 @@ namespace Ducksboard.Tests.Objects
             var target = new Text();
             target.Value.Content = @"Text!\nLorem ipsum dolor sit amet...";
 
-            var result = Serializer.Serialize(target);
+            string result = Serializer.Serialize(target);
             result.Should().NotBeNullOrEmpty();
         }
     }
@@ -101,7 +101,7 @@ namespace Ducksboard.Tests.Objects
                 .Add("Elvis Hayes", 28313, 1303, 21.0m)
                 .Add("H. Olajuwon", 26946, 1238, 21.8m);
 
-            var result = Serializer.Serialize(target);
+            string result = Serializer.Serialize(target);
             result.Should().NotBeNullOrEmpty();
         }
     }
@@ -120,7 +120,7 @@ namespace Ducksboard.Tests.Objects
                 .Add("overridden", TrendLeaderboard.Trends.Up, 1560, 24.6m);
 
 
-            var result = Serializer.Serialize(target);
+            string result = Serializer.Serialize(target);
             result.Should().NotBeNullOrEmpty();
         }
     }
@@ -138,7 +138,7 @@ namespace Ducksboard.Tests.Objects
                 .Add("very bad", StatusLeaderboard.Status.Red, "15%")
                 .Add("not sure", StatusLeaderboard.Status.Gray, "--");
 
-            var result = Serializer.Serialize(target);
+            string result = Serializer.Serialize(target);
             result.Should().NotBeNullOrEmpty();
         }
     }
@@ -158,7 +158,7 @@ namespace Ducksboard.Tests.Objects
                 .Add("STEP 5", 600)
                 .Add("STEP 6", 330);
 
-            var result = Serializer.Serialize(target);
+            string result = Serializer.Serialize(target);
             result.Should().NotBeNullOrEmpty();
         }
     }
