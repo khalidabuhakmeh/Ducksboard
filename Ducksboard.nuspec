@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>Ducksboard</id>
+        <version>1.0.0</version>
+        <title>Ducksboard</title>
+        <authors>khalidabuhakmeh</authors>
+        <owners>khalidabuhakmeh</owners>
+        <projectUrl>https://github.com/khalidabuhakmeh/Ducksboard</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>This project contains objects specifically tied to the Ducksboard API, giving you the ability to update your Ducksboard dashboard from your .NET applications.
+http://www.ducksboard.com</description>
+        <summary>This project contains objects specifically tied to the Ducksboard API, giving you the ability to update your Ducksboard dashboard from your .NET applications.
+http://www.ducksboard.com</summary>
+        <releaseNotes>Initial Release</releaseNotes>
+        <tags>Ducksboard, Dashboard, API, Information</tags>
+        <dependencies>
+            <dependency id="RestSharp" version="104.1" />
+        </dependencies>
+        <frameworkAssemblies>
+            <frameworkAssembly assemblyName="System.Runtime.Serialization" targetFramework="" />
+        </frameworkAssemblies>
+    </metadata>
+    <files>
+        <file src="Ducksboard\bin\Release\Ducksboard.dll" target="lib\net40\Ducksboard.dll" />
+    </files>
+</package>

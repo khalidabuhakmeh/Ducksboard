@@ -1,4 +1,6 @@
-﻿using Ducksboard.Objects;
+﻿using System.Net;
+using Ducksboard.Objects;
+using FluentAssertions;
 using Xunit;
 
 namespace Ducksboard.Tests
@@ -15,14 +17,15 @@ namespace Ducksboard.Tests
         [Fact]
         public void Can_update_a_number_widget()
         {
-            Dashboard.Update("** Widget **", new Numbers {Value = 0});
+           var response =  Dashboard.Update("** Widget **", new Numbers {Value = 0});
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
         }
 
         [Fact]
         public void Can_update_an_image_widget()
         {
-            Dashboard.Update("** Widget **",
-                             new Image("http://i.telegraph.co.uk/multimedia/archive/01452/fer1_1452403i.jpg", "Ferrari"));
+            var response = Dashboard.Update("** Widget **", new Image("http://i.telegraph.co.uk/multimedia/archive/01452/fer1_1452403i.jpg", "Ferrari"));
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
         }
 
         [Fact]
@@ -35,7 +38,8 @@ namespace Ducksboard.Tests
             timeline.Value.Link =
                 "http://www.telegraph.co.uk/motoring/car-manufacturers/ferrari/5931105/Ferrari-458-photo-gallery.html";
 
-            Dashboard.Update("** Widget **", timeline);
+            var response = Dashboard.Update("** Widget **", timeline);
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
         }
     }
 }
