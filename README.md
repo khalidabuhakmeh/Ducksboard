@@ -14,7 +14,7 @@ The objects contained here can be used for both Push and Pull APIs. You can sign
 
 ```csharp
     var dashboard = new DucksboardClient("** Your API Key Here **");
-    dashboard.Update("**widget number**, new Numbers { Value = 3.5 });
+    dashboard.Update("**widget number**", new Numbers { Value = 3.5 });
 ```
 
 ### Supported Objects
