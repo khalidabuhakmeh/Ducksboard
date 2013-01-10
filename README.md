@@ -9,12 +9,12 @@ The objects contained here can be used for both Push and Pull APIs. You can sign
 ## Gettings Started
 
 ```csharp
-  PM > Install-Package Ducksboard
+PM > Install-Package Ducksboard
 ```
 
 ```csharp
-    var dashboard = new DucksboardClient("** Your API Key Here **");
-    dashboard.Update("**widget number**", new Numbers { Value = 3.5 });
+var dashboard = new DucksboardClient("** Your API Key Here **");
+dashboard.Update("**widget number**", new Numbers { Value = 3.5 });
 ```
 
 ### Supported Objects
