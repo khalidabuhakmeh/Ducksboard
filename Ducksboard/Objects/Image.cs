@@ -2,6 +2,9 @@ using System.Runtime.Serialization;
 
 namespace Ducksboard.Objects
 {
+    /// <summary>
+    /// The image widget will accept both image urls and base64 encoded images.
+    /// </summary>
     [DataContract]
     public class Image : DucksboardObjectBase
     {

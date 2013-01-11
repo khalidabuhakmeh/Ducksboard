@@ -1,4 +1,5 @@
-﻿using Ducksboard.Objects;
+﻿using System;
+using Ducksboard.Objects;
 using FluentAssertions;
 using Xunit;
 
@@ -9,7 +10,7 @@ namespace Ducksboard.Tests.Objects
         [Fact]
         public void Can_serialize_value_properly()
         {
-            var target = new Numbers {Value = 3.5m};
+            var target = new Numbers { Value = 3.5m };
             string result = Serializer.Serialize(target);
             result.Should().NotBeNullOrEmpty();
         }
@@ -17,15 +18,45 @@ namespace Ducksboard.Tests.Objects
         [Fact]
         public void Can_call_to_json_on_a_ducksboard_object()
         {
-            new Numbers {Value = 3}.ToJson().Should().NotBeNullOrEmpty();
+            new Numbers { Value = 3 }.ToJson().Should().NotBeNullOrEmpty();
         }
 
         [Fact]
         public void Can_serialize_delta_properly()
         {
-            var target = new Numbers {Delta = 3.5m};
+            var target = new Numbers { Delta = 3.5m };
             string result = Serializer.Serialize(target);
             result.Should().NotBeNullOrEmpty();
+        }
+
+        [Fact]
+        public void Can_serialize_date_to_unix_timestamp()
+        {
+            var target = new Numbers(new DateTime(2012, 5, 26, 0, 0, 0, DateTimeKind.Utc));
+            target.Timestamp.Should().HaveValue();
+            target.Timestamp.Should().Be(1337990400);
+        }
+
+        [Fact]
+        public void Can_set_date_which_sets_timestamp()
+        {
+            var target = new Numbers { Date = new DateTime(2012, 5, 26, 0, 0, 0, DateTimeKind.Utc), Value = 3 };
+            target.Timestamp.Should().HaveValue();
+            target.Timestamp.Should().Be(1337990400);
+
+            string result = Serializer.Serialize(target);
+            result.Should().NotBeNull();
+        }
+
+        [Fact]
+        public void Can_serialize_an_array_of_numbers()
+        {
+            var numbers = new[] {new Numbers {Value = 1}, new Numbers {Value = 2}};
+            var result = Serializer.Serialize(numbers);
+
+            result.Should().NotBeNull();
+            result.Should().StartWith("[");
+            result.Should().EndWith("]");
         }
     }
 
@@ -34,7 +65,7 @@ namespace Ducksboard.Tests.Objects
         [Fact]
         public void Can_serialize_a_gague_properly()
         {
-            var target = new Gauges {Value = 0.25m};
+            var target = new Gauges { Value = 0.25m };
             string result = Serializer.Serialize(target);
             result.Should().NotBeNullOrEmpty();
         }
