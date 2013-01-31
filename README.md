@@ -34,6 +34,27 @@ Note: the response object will let you know if it was successful in updating. It
 - Timeline (my personal favorite)
 - TrendLeaderboard
 
+### Dashboard API
+
+CRUD operations for Dashboards and widgets have been implemented in the dashboard api.
+
+Example usage : 
+```csharp
+var dashboardClient = new DashboardClient("** Your API Key Here **");
+var dashboard = new Dashboard()
+            {
+                Name = dashboardName,
+                Background = "dark wood",
+            };
+
+dashboard = dashboardClient.Create(dashboard);
+```
+### Supported Objects
+
+- Dashboards
+- Widgets
+
+NOTE: Currently widget content is not supported.  Any of the http://dev.ducksboard.com/apidoc/widgets-list/#custom-widgets Custom widgets can be used.
 
 ## ASP.NET and Pull API
 
