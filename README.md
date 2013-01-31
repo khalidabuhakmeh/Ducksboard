@@ -34,7 +34,7 @@ Note: the response object will let you know if it was successful in updating. It
 - Timeline (my personal favorite)
 - TrendLeaderboard
 
-Dashboard API
+### Dashboard API
 
 CRUD operations for Dashboards and widgets have been implemented in the dashboard api.
 
