@@ -25,13 +25,13 @@ namespace Ducksboard.Objects
         [DataMember(Name = "subtitle")]
         public string Subtitle { get; set; }
 
-        [DataMember(Name = "timespan")]
+        [DataMember(Name = "timespan", EmitDefaultValue = false)]
         public string Timespan { get; set; }
 
-        [DataMember(Name = "color")]
+        [DataMember(Name = "color", EmitDefaultValue = false)]
         public string Color { get; set; }
 
-        [DataMember(Name = "label")]
+        [DataMember(Name = "label", EmitDefaultValue = false)]
         public string Label { get; set; }
 
     }

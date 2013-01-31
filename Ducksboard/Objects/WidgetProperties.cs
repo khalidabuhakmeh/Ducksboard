@@ -11,7 +11,7 @@ namespace Ducksboard.Objects
     public class WidgetProperties : DucksboardObjectBase
     {
 
-        [DataMember(Name = "id")]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         [DataMember(Name = "kind")]
@@ -29,10 +29,10 @@ namespace Ducksboard.Objects
         [DataMember(Name = "height")]
         public int Height { get; set; }
 
-        [DataMember(Name = "row")]
+        [DataMember(Name = "row", EmitDefaultValue = false)]
         public int Row { get; set; }
 
-        [DataMember(Name = "column")]
+        [DataMember(Name = "column", EmitDefaultValue = false)]
         public int Column { get; set; }
 
         [DataMember(Name = "sound")]
