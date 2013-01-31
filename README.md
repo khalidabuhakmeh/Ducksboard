@@ -49,6 +49,12 @@ var dashboard = new Dashboard()
 
 dashboard = dashboardClient.Create(dashboard);
 ```
+### Supported Objects
+
+- Dashboards
+- Widgets
+
+NOTE: Currently widget content is not supported.  Any of the http://dev.ducksboard.com/apidoc/widgets-list/#custom-widgets Custom widgets can be used.
 
 ## ASP.NET and Pull API
 
