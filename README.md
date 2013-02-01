@@ -73,8 +73,8 @@ Using the pull API is very simple, you just need to provide Ducksboard with a ur
 
 ## Contributors
 
-Khalid Abuhakmeh
-Brendan Tompkins
+- Khalid Abuhakmeh ([@aquabirdconsult](http://twitter.com/aquabirdconsult))
+- Brendan Tompkins ([@btompkins](http://twitter.com/btompkins))
 
 ## Pull Requests
 
