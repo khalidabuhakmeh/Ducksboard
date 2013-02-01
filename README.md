@@ -73,7 +73,8 @@ Using the pull API is very simple, you just need to provide Ducksboard with a ur
 
 ## Contributors
 
-Written by Khalid Abuhakmeh
+Khalid Abuhakmeh
+Brendan Tompkins
 
 ## Pull Requests
 
