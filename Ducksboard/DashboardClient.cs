@@ -43,7 +43,9 @@ namespace Ducksboard
                         RequestFormat = DataFormat.Json
                     });
 
-            return response.Data.Data;
+            if (response.StatusCode == HttpStatusCode.OK) return response.Data.Data;
+            if (response.StatusCode == HttpStatusCode.BadRequest) throw new InvalidOperationException(response.Content);
+            throw new Exception(response.StatusDescription, response.ErrorException);
         }
 
         /// <summary>
@@ -67,6 +69,7 @@ namespace Ducksboard
             var response = _client.Execute<T>(request);
 
             if (response.StatusCode == HttpStatusCode.OK) return response.Data;
+            if(response.StatusCode == HttpStatusCode.BadRequest) throw new InvalidOperationException(response.Content);
             throw new Exception(response.StatusDescription, response.ErrorException);
         }
 
@@ -87,7 +90,8 @@ namespace Ducksboard
                     });
 
             if (response.StatusCode == HttpStatusCode.NotFound) return default(T);
-            if (response.StatusCode == HttpStatusCode.OK) return response.Data;
+            if (response.StatusCode == HttpStatusCode.OK) return response.Data; 
+            if (response.StatusCode == HttpStatusCode.BadRequest) throw new InvalidOperationException(response.Content);
             throw new Exception(response.StatusDescription, response.ErrorException);
         }
 
@@ -116,6 +120,7 @@ namespace Ducksboard
             var response = _client.Execute<T>(request);
 
             if (response.StatusCode == HttpStatusCode.OK) return response.Data;
+            if (response.StatusCode == HttpStatusCode.BadRequest) throw new InvalidOperationException(response.Content);
             throw new Exception(response.StatusDescription, response.ErrorException);
         }
 
@@ -134,6 +139,7 @@ namespace Ducksboard
             var response = _client.Execute(request);
             if (response.StatusCode == HttpStatusCode.OK) return true;
             if (response.StatusCode == HttpStatusCode.NotFound) return false;
+            if (response.StatusCode == HttpStatusCode.BadRequest) throw new InvalidOperationException(response.Content);
             throw new Exception(response.StatusDescription, response.ErrorException);
         }
 

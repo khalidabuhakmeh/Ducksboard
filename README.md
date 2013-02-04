@@ -48,6 +48,37 @@ var dashboard = new Dashboard()
             };
 
 dashboard = dashboardClient.Create(dashboard);
+
+var leaderboard = client.Create(new Widget()
+			{
+			    WidgetProperties = new WidgetProperties()
+			    {
+			        Dashboard = dashboard.Slug,
+			        Kind = "custom_textual_status_leaderboard",
+			        Sound = true,
+			        Title = "My Leaderboard",
+			        Width = 1,
+			        Height = 2
+			    },
+			    Slots = new Slot
+			    {
+			        Slot1 = new SlotData
+			            {
+			                Subtitle1 = "Thing",
+			                Color1 = Color.DarkSlateBlue.ToDucksboardColor(),
+			                Subtitle2 = "Status",
+			                Color2 = Color.Black.ToDucksboardColor()
+			            }
+			    }
+			});
+
+
+leaderboard.Slots.Slot1.Label = "MySlotLabel";
+
+dashboardCient.Update(leaderboard, leaderboard.Slug);
+
+
+
 ```
 ### Supported Objects
 
