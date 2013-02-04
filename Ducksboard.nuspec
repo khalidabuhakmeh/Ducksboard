@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>Ducksboard</id>
-        <version>1.1.0</version>
+        <version>1.1.1</version>
         <title>Ducksboard</title>
         <authors>khalidabuhakmeh</authors>
         <owners>khalidabuhakmeh</owners>
@@ -12,7 +12,7 @@
 http://www.ducksboard.com</description>
         <summary>This project contains objects specifically tied to the Ducksboard API, giving you the ability to update your Ducksboard dashboard from your .NET applications.
 http://www.ducksboard.com</summary>
-        <releaseNotes>Updates now a method to allow you to pass multiple numbers to your Ducksboard widget.</releaseNotes>
+        <releaseNotes>Updates now a method to allow you to pass multiple numbers to your Ducksboard widget. Additions to Ducksboard Widget API.</releaseNotes>
         <tags>Ducksboard, Dashboard, API, Information</tags>
         <dependencies>
             <dependency id="RestSharp" version="104.1" />
