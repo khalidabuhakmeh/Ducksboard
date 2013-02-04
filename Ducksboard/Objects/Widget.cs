@@ -12,7 +12,7 @@ namespace Ducksboard.Objects
         [DataMember(Name = "widget")]
         public WidgetProperties WidgetProperties { get; set; }
 
-        [DataMember(Name = "slots")]
+        [DataMember(Name = "slots", EmitDefaultValue = false)]
         public Slot Slots { get; set; }
 
         public string Slug
