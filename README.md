@@ -22,17 +22,31 @@ var response = dashboard.Update("**widget number**", new Numbers { Value = 3.5 }
 
 Note: the response object will let you know if it was successful in updating. It is not worth looking at unless you are running into issues. I exposed it so you can debug issues more easily.
 
-### Supported Objects
+### Supported Widgets
 
-- Funnel
-- Gauges
-- Image
-- Leaderboard
-- Numbers
-- StatusLeaderboard
-- Text
-- Timeline (my personal favorite)
-- TrendLeaderboard
+| Widget                   | Model Class                   |
+| ------------------------ | ----------------------------- |
+| Counters                 | Numbers                       |
+| Gauges                   | Gauges                        |
+| Absolute Graphs          | Numbers                       |
+| Absolute Area Graphs     | Numbers                       |
+| Stacked Graphs           | Numbers                       |
+| Relative Graphs          | Numbers                       |
+| Relative Area Graphs     | Numbers                       |
+| Bars                     | Numbers                       |
+| Boxes                    | Numbers                       |
+| Pins                     | Numbers                       |
+| Images                   | Image                         |
+| Status                   | Status                        |
+| Texts                    | Text                          |
+| Timelines                | Timeline                      |
+| Leaderboards             | Leaderboard                   |
+| Trend Leaderboards       | TreadLeaderboard              |
+| Status Leaderboards      | StatusLeaderboard             |
+| Funnels                  | Funnel                        |
+| Completion               | Completion                    |
+
+See http://dev.ducksboard.com/apidoc/slot-kinds/ for the list of widgets and their documentation.
 
 ### Dashboard API
 
