@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="DashboardClient.cs" />
     <Compile Include="DucksboardClient.cs" />
+    <Compile Include="Objects\Completion.cs" />
     <Compile Include="Objects\Dashboard.cs" />
     <Compile Include="Objects\Slot.cs" />
     <Compile Include="Objects\WidgetProperties.cs" />

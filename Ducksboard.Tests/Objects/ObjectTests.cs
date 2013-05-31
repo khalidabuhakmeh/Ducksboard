@@ -193,4 +193,20 @@ namespace Ducksboard.Tests.Objects
             result.Should().NotBeNullOrEmpty();
         }
     }
+
+    public class CompletionTests : SerializationTest
+    {
+        [Fact]
+        public void Can_serialize_completion_objects()
+        {
+            var target = new Completion();
+
+            target.Value.Min = 0;
+            target.Value.Max = 100;
+            target.Value.Current = 75.25M;
+
+            string result = Serializer.Serialize(target);
+            result.Should().NotBeNullOrEmpty();
+        }
+    }
 }
