@@ -63,7 +63,9 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ducksboard\Ducksboard.csproj">
       <Project>{96A6B30E-DE64-4F5F-B2B1-099433DB7549}</Project>

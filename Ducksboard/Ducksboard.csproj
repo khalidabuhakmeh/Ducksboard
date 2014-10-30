@@ -51,6 +51,7 @@
     <Compile Include="DucksboardClient.cs" />
     <Compile Include="Objects\Completion.cs" />
     <Compile Include="Objects\Dashboard.cs" />
+    <Compile Include="Objects\Pin.cs" />
     <Compile Include="Objects\Slot.cs" />
     <Compile Include="Objects\WidgetProperties.cs" />
     <Compile Include="Objects\Status.cs" />
