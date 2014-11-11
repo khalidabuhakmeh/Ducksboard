@@ -209,4 +209,23 @@ namespace Ducksboard.Tests.Objects
             result.Should().NotBeNullOrEmpty();
         }
     }
+
+    public class PinTests : SerializationTest
+    {
+        [Fact]
+        public void Can_serialize_pin_objects()
+        {
+            var target = new Pin();
+
+            target.Value.Color = "#C11F70";
+            target.Value.Latitude = 51.5033630m;
+            target.Value.Longitude = -0.1276250m;
+            target.Value.Size = 1;
+            target.Value.Value = 3.2m;
+            target.Value.Info = "details!";
+
+            string result = Serializer.Serialize(target);
+            result.Should().NotBeNullOrEmpty();
+        }
+    }
 }
