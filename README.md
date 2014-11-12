@@ -35,7 +35,7 @@ Note: the response object will let you know if it was successful in updating. It
 | Relative Area Graphs     | Numbers                       |
 | Bars                     | Numbers                       |
 | Boxes                    | Numbers                       |
-| Pins                     | Numbers                       |
+| Pins                     | Pin                       |
 | Images                   | Image                         |
 | Status                   | Status                        |
 | Texts                    | Text                          |
